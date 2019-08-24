@@ -67,7 +67,7 @@ plt.show()
 
 # Only taking elements with good correlation
 corrmat = abs(corrmat['Hazardous'])
-relev_features = corrmat[corrmat > 0.05]
+relev_features = corrmat[corrmat > 0.2]
 df = df[relev_features.index]
 
 ##def extract_features(data):
