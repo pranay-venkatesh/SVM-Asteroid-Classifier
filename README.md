@@ -23,6 +23,9 @@ There's also a lot of data with minimal amount of correlation to the actual prob
 
 Correlation is a good indicator of values to keep and values to exclude
 
+![heatmap](https://raw.githubusercontent.com/pranay-venkatesh/SVM-Asteroid-Classifier/master/screenshots/Heatmap.png)
+
+
 After a few tests, it became clear to me that the optimum range for exclusion of values lay somewhere between 0.2 and 0.3
 (meaning that if the value of correlation was less than 0.3, it would be excluded, because it becomes evident that the parameter has nothing to do with how hazardous an asteroid is)
 
@@ -36,6 +39,7 @@ And so on.
 
 A simple way to deal with the date data given in the dataset is to use datetime package. I've converted all the dates to Epoch Date Format. Where we basically count the number of seconds elapsed since 1st January 1970.
 
+![date information](https://raw.githubusercontent.com/pranay-venkatesh/SVM-Asteroid-Classifier/master/screenshots/Date%20in%20seconds.png)
 
 * Splitting the data into training and testing data
 
@@ -44,4 +48,10 @@ My biggest learning impact from this project was that sklearn allows you to spli
 ```
 features_matrix, test_matrix, labels, test_labels = train_test_split(df, df['Hazardous'], test_size=0.2, random_state=0)
 ```
+![splitting data](https://raw.githubusercontent.com/pranay-venkatesh/SVM-Asteroid-Classifier/master/screenshots/Splitting%20data.png)
 
+After the data has been put in place, we just have to fit the model with the appropriate parameters and test the data with our testing matrix.
+
+We then compare our testing matrix's labels with the actual labels from the given data and we see how accurate our model has been.
+
+![accuracy](https://raw.githubusercontent.com/pranay-venkatesh/SVM-Asteroid-Classifier/master/screenshots/Accuracy.png)
